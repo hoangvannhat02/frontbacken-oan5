@@ -1,0 +1,209 @@
+
+    <aside>
+        <div class="grid container">
+            <div class="row">
+                <div class="col c-12 m-3 l-3 nav-menu">
+                    <div class="logo">
+                        <a href="index.html" class="link-logo">
+                            <img src="assets/set/img/logo.png" alt="">
+                        </a>
+                    </div>
+
+                    <div class="box-menu" (click)="toggleMenuList()">
+                        <div class="menu-item">
+                            <i style="color: rgb(66, 114, 215);" class="fa-solid fa-gauge-high"></i><a style="color: rgb(66, 114, 215);" routerLink="/">Dashbroad</a>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="box-manage-menu">
+                                <i class="fa-solid fa-bars-progress"></i><a
+                                 href="#">Quản lý sản phẩm</a>
+                                <i id="icon-angle-right" style="margin-left: 20px;font-size: 12px;" class="fa-solid fa-angle-right"></i>                                  
+                            </div>
+                            <ul class="menu-item__list" *ngIf="isMenuListVisible">
+                                <li>
+                                    <a routerLink="/category">Loại sản phẩm</a>
+                                </li>
+
+                                <li>
+                                    <a routerLink="/products">Sản phẩm</a>
+                                </li>
+
+                                <li>
+                                    <a routerLink="/color">Màu sắc</a>
+                                </li>
+
+                                <li>
+                                    <a routerLink="/size">Kích thước</a>
+                                </li>
+
+                                <li>
+                                    <a routerLink="/brand">Hãng</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-item">
+                            <i class="fa-solid fa-file-import"></i><a routerLink="/importinvoice">Hóa đơn nhập</a>
+                        </div>
+
+                        <div class="menu-item" (click)="toggleMenuListVoucher()">
+                            <div class="box-manage-menu">
+                                <i class="fa-solid fa-ticket"></i><a
+                                 href="#">Quản lý phiếu giảm giá</a>
+                                <i id="icon-angle-right" style="margin-left: 20px;font-size: 12px;" class="fa-solid fa-angle-right"></i>                                  
+                            </div>
+                            <ul class="menu-item__list" *ngIf="isMenuListVisibleVoucher">
+                                <li>
+                                    <a routerLink="/categoryvoucher">Loại phiếu giảm giá</a>
+                                </li>
+
+                                <li>
+                                    <a routerLink="/voucher">Phiếu giảm giá</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-item" (click)="toggleMenuListNew()">
+                            <div class="box-manage-menu">
+                                <i class="fa-solid fa-newspaper"></i><a
+                                 href="#">Quản lý tin tức</a>
+                                <i id="icon-angle-right" style="margin-left: 20px;font-size: 12px;" class="fa-solid fa-angle-right"></i>                                  
+                            </div>
+                            <ul class="menu-item__list" *ngIf="isMenuListVisibleNew">
+                                <li>
+                                    <a routerLink="/categorynews">Chủ đề tin tức</a>
+                                </li>
+
+                                <li>
+                                    <a routerLink="/news">Tin tức</a>
+                                </li>
+                            </ul>
+                        </div>
+                          
+                        <div class="menu-item">
+                            <i class="fa-solid fa-truck-arrow-right"></i><a routerLink="/transport">Quản lý vận chuyển</a>
+                        </div>
+                        
+                        <div class="menu-item"><i class="fa-solid fa-users"></i><a routerLink="/user">Người dùng</a>
+                        </div>
+                        <div class="menu-item">
+                            <i class="fa-solid fa-user"></i><a routerLink="/supplier">Nhà cung cấp</a>
+                        </div>
+
+                        <div class="menu-item">
+                            <i class="fa-regular fa-credit-card"></i><a routerLink="/billofsale">Hóa đơn bán</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col c-12 m-9 l-9">
+                    <app-header></app-header>
+                   
+                    <div class="main-content">
+                        <div class="item_title">
+                            <i class="fa-solid fa-arrow-up-right-dots"></i> <span>Hoạt động hôm nay</span>
+                            <hr>
+                        </div>
+                        <div class="col l-12 m-12 c-12">
+                            <div class="row">
+                                <div class="col l-4 m-12 c-12 box_content_product">
+                                    <div id="box_title">
+                                        <div>
+                                            <i class="fa-solid fa-arrow-up-right-dots"></i>
+                                        </div>
+                                        <div>
+                                            Tiền bán hàng <br>
+                                            <span id="tienbanhang">
+                                                0đ
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="under_box_title">
+                                        <div>
+                                            <span><i class="fa-solid fa-briefcase"></i> Hoạt động</span> <span>Tổng
+                                                cộng</span>
+                                        </div>
+                                        <div>
+                                            Tổng tiền bán <span id="tongtienban">0đ</span>
+                                        </div>
+                                        <div>
+                                            Số đơn hàng <span id="sodonhang">0</span>
+                                        </div>
+                                        <div>
+                                            Số sản phẩm <span id="sosanpham"></span>
+                                        </div>
+                                        <div>
+                                            Khách trả hàng <span id="khachtrahang">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-4 m-12 c-12 box_content_product">
+                                    <div id="box_title2">
+                                        <div>
+                                            <i class="fa-solid fa-cloud"></i>
+                                        </div>
+                                        <div>
+                                            Số đơn hàng: <span id="sodonhangnhap">0</span> <br>
+                                            <span>
+                                                Số sản phẩm: <span id="sosanphamnhap">0</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="under_box_title item_warehouse">
+                                        <div>
+                                            <span><i class="fa-solid fa-warehouse"></i> Thông tin kho</span> <span>Tổng
+                                                cộng</span>
+                                        </div>
+                                        <div>
+                                            Số lượng mặt hàng tồn <span id="slhangton">0</span>
+                                        </div>
+                                        <div>
+                                            Mặt hàng sắp hết <span id="slhangsaphet">0</span>
+                                        </div>
+                                        <div>
+                                            Mặt hàng đã hết <span id="slhanghet">0</span>
+                                        </div>
+                                        <div>
+                                            Vượt định mức <span id="vuotdinhmuc">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-4 m-12 c-12 box_content_product">
+                                    <div style="background-color: rgba(255, 0, 0, 0.616);" id="box_title">
+                                        <div>
+                                            <i class="fa-solid fa-users"></i>
+                                        </div>
+                                        <div>
+                                            Khách trả hàng <br>
+                                            <span class="khachtra">
+                                                0
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="under_box_title item_user">
+                                        <div>
+                                            <span><i class="fa-solid fa-sitemap"></i> Thông tin sản phẩm</span> <span>Tổng
+                                                cộng</span>
+                                        </div>
+                                        <div>
+                                            Sản phẩm <span id="sanpham">0</span>
+                                        </div>
+                                        <div>
+                                            Chưa có giá bán <span id="chuagia">0</span>
+                                        </div>
+                                        <div>
+                                            Chưa nhập giá mua <span id="chuamua">0</span>
+                                        </div>
+                                        <div>
+                                            Hàng chưa phân loại <span id="khachtrahang">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
